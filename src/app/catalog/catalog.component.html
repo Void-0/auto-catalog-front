@@ -1,3 +1,24 @@
 <p>
-  catalog works!
+  Catalog component listing cars:
 </p>
+
+<div *ngFor="let car of carList">
+  <span>
+    {{car.name}}
+  </span>
+
+  <ul>
+    <li>
+      ID: {{car.id}}
+    </li>
+    <li>
+      Category: {{car.category}}
+    </li>
+    <li>
+      Created at: {{car.createdAt}}
+    </li>
+    <li>
+      Updated at: {{car.updatedAt}}
+    </li>
+  </ul>
+</div>
