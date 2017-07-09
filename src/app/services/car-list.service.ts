@@ -9,7 +9,7 @@ import { Car } from '../models/Car'
 
 @Injectable()
 export class CarListService {
-  private carsUrl = 'https://dev.clicktomeat.com/dashboard-backend/api/cars';
+  private carsUrl = '/api/cars';
 
   constructor(private http: Http) {}
 

@@ -2,10 +2,6 @@
 
 Front-end Angular 4 POC for a fictional car rental service.
 
-NB: if you get an error like this due to your browser over zealously not allowing cross site scripting: "XMLHttpRequest cannot load https://dev.clicktomeat.com/dashboard-backend/api/cars. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:4200' is therefore not allowed access."
-Then run your chrome trough cmd (or other terminals) with the following options:
-<path_to_chrome_install>chrome.exe --user-data-dir="<some_empty_folder_for_chrome_dev_session>" --disable-web-security
-
 This error usually only appears in dev mode as our API is not on the same domain as our front-end.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
