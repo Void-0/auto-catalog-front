@@ -1,14 +1,36 @@
-<div style="text-align:center">
+<div class="header-logo">
   <img width="600" src="../assets/images/main-logo.jpg">
 </div>
 
-<div class="row">
-  <md-card class="col-6">Sport</md-card>
-  <md-card class="col-6">Berline</md-card>
+<div class="row category-space">
+  <div class="col-6 align-right"><button md-raised-button (click)="selectCategory('sport')"><img width="400" src="../assets/images/sport.jpg"></button></div>
+  <div class="col-6"><button md-raised-button (click)="selectCategory('berline')"><img width="400" src="../assets/images/ber.jpg"></button></div>
 </div>
-<div class="row">
-  <md-card class="col-6">SUV</md-card>
-  <md-card class="col-6">Citadines</md-card>
+<div class="row category-space">
+  <div class="col-6 align-right"><button md-raised-button (click)="selectCategory('suv')"><img width="400" src="../assets/images/suv.jpg"></button></div>
+  <div class="col-6"><button md-raised-button (click)="selectCategory('citadines')"><img width="400" src="../assets/images/citadines.jpg"></button></div>
 </div>
 
-<app-catalog></app-catalog>
+<app-catalog *ngIf="selectedCategory === 'sport'"
+             filterByType="category"
+             filterByValue="sport"
+             sortyByValue="name"
+></app-catalog>
+
+<app-catalog *ngIf="selectedCategory === 'suv'"
+             filterByType="category"
+             filterByValue="suv"
+             sortyByValue="name"
+></app-catalog>
+
+<app-catalog *ngIf="selectedCategory === 'berline'"
+             filterByType="category"
+             filterByValue="berline"
+             sortyByValue="name"
+></app-catalog>
+
+<app-catalog *ngIf="selectedCategory === 'citadines'"
+             filterByType="category"
+             filterByValue="citadines"
+             sortyByValue="name"
+></app-catalog>

@@ -1,24 +1,28 @@
-<p>
-  Catalog component listing cars:
-</p>
+<div class="catalog-body">
+  <p>
+    <b>Available cars for {{filterByValue}}:</b>
+  </p>
 
-<div *ngFor="let car of carList">
-  <span>
-    {{car.name}}
-  </span>
+  <div class="accordion-component"
+       *ngFor="let car of carList | filterBy : filterByType:filterByValue | sortBy : sortyByValue"
+  >
+    <md-button-toggle class="button-size" (click)="toggleShowDetails(car)">
+      {{car.name}}
+    </md-button-toggle>
 
-  <ul>
-    <li>
-      ID: {{car.id}}
-    </li>
-    <li>
-      Category: {{car.category}}
-    </li>
-    <li>
-      Created at: {{car.createdAt}}
-    </li>
-    <li>
-      Updated at: {{car.updatedAt}}
-    </li>
-  </ul>
+    <ul [hidden]="!car.showDetails">
+      <li>
+        ID: {{car.id}}
+      </li>
+      <li>
+        Category: {{car.category}}
+      </li>
+      <li>
+        Created at: {{car.createdAt}}
+      </li>
+      <li>
+        Updated at: {{car.updatedAt}}
+      </li>
+    </ul>
+  </div>
 </div>

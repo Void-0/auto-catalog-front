@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {CarListService} from "../services/car-list.service";
 import { Car } from "../models/Car";
 
@@ -9,10 +9,14 @@ import { Car } from "../models/Car";
 })
 export class CatalogComponent implements OnInit {
 
+  @Input() filterByType: string;
+  @Input() filterByValue: string;
+  @Input() sortyByValue: string;
+
   carList: Car[];
   errorMessage: string;
 
-  constructor (private carListService: CarListService) {}
+  constructor (private carListService: CarListService) {  }
 
   ngOnInit() { this.getCarList(); }
 
@@ -21,6 +25,10 @@ export class CatalogComponent implements OnInit {
       .subscribe(
         cars => this.carList = cars,
         error =>  this.errorMessage = <any>error);
+  }
+
+  toggleShowDetails(car) {
+    car.showDetails = !car.showDetails;
   }
 
 }
