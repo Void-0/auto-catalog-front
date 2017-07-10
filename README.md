@@ -2,13 +2,15 @@
 
 Front-end Angular 4 POC for a fictional car rental service.
 
-This error usually only appears in dev mode as our API is not on the same domain as our front-end.
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` instead of `ng serve` for a dev server. A webpack proxy has been setup so as to be able to call an external API and avoid CORS errors. For more info visit:
+https://github.com/angular/angular-cli/wiki/stories-proxy
+https://juristr.com/blog/2016/11/configure-proxy-api-angular-cli/
+
+To view the app, navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
